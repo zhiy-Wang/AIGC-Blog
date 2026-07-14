@@ -91,9 +91,9 @@ token 数量没有减少，只是每个 token 都有了一个 768 维表示。
 Self-Attention 的核心公式是：
 
 ```math
-\operatorname{Attention}(Q,K,V)
+\mathrm{Attention}(Q,K,V)
 =
-\operatorname{softmax}
+\mathrm{softmax}
 \left(
 \frac{QK^\top}{\sqrt{d_k}}
 \right)V
@@ -199,9 +199,9 @@ head_dim = 768 / 12 = 64
 每个 head 独立计算 Attention，最后把结果拼接起来：
 
 ```math
-\operatorname{MultiHead}(Q,K,V)
+\mathrm{MultiHead}(Q,K,V)
 =
-\operatorname{Concat}(head_1,\ldots,head_h)W_O
+\mathrm{Concat}(head_1,\ldots,head_h)W_O
 ```
 
 它不意味着某个 head 一定负责语法、另一个 head 一定负责位置，而是给模型提供多个并行的关系建模空间。
